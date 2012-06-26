@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <title>Sassulator</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <form action="/" method="POST">
+    <input type="text" name="code">
+    <input type="submit" value="Submit">
+  </form>
+  
+  <div class="result"></div>
+  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    $("form").submit(function(e) {
+      e.preventDefault() // Stop form from submitting
+      
+      $.ajax({
+        url: $(this).attr("action"),
+        type: "POST",
+        data: $(this).serialize(),
+        success: function(data, text, xhr) {
+          $(".result").html(data)
+          console.log(xhr)
+        }
+      })
+    })
+  </script>
+</body>
+</html>
