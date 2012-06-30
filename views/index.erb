@@ -3,6 +3,7 @@
 <head>
   <title>Sassulator</title>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
 </head>
 <body>
   <form action="/" method="POST">
@@ -11,6 +12,9 @@
   </form>
   
   <div class="result"></div>
+  
+  <div class="before"></div>
+  <div class="after"></div>
   
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script type="text/javascript">
@@ -21,9 +25,12 @@
         url: $(this).attr("action"),
         type: "POST",
         data: $(this).serialize(),
+        dataType: "json",
         success: function(data, text, xhr) {
-          $(".result").html(data)
-          console.log(xhr)
+          console.log(data)
+          $(".result").html(data.output)
+          $(".before").css("background-color", data.original_color)
+          $(".after").css("background-color", data.output)
         }
       })
     })
