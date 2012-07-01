@@ -6,15 +6,21 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
 </head>
 <body>
-  <form action="/" method="POST">
-    <input type="text" name="code">
-    <input type="submit" value="Submit">
-  </form>
-  
-  <div class="result"></div>
-  
-  <div class="before"></div>
-  <div class="after"></div>
+  <div id="content-main">
+      <section id="input" class="container">
+          <form action="/" method="POST">
+            <input type="text" name="code">
+            <input type="submit" value="Submit">
+          </form>
+      </section>
+
+      <section id="output" class="container">
+          <h2 class="result"></h2>
+
+          <div class="before"></div>
+          <div class="after"></div>
+      </section>
+  </div>
   
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script type="text/javascript">

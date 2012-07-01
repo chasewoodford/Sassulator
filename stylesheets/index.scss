@@ -1,6 +1,26 @@
+body {
+  background-color: #f0f0f0;
+}
+
+#content-main {
+  width: 93.75%; // 900px/960px
+  margin: 0 auto;
+  text-align: center;
+  outline: 1px solid green;
+}
+
+.container {
+  width: 100%;
+  outline: 1px solid lightblue;
+}
+
 .before,
 .after {
+  display: inline-block;
   border: 1px solid black;
-  height: 100px;
-  width: 100px;
+  height: 300px;
+  min-width: 300px; width: 31.25%; // 300px/960px
+  margin: 0 1.0416666666666666666666666666667%; //  lr-10px
+  border-radius: 40px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
