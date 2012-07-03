@@ -6,7 +6,17 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
 </head>
 <body>
+  <header>
+      <h1>Sassulator is a visualized calculator for Sass functions.</h1>
+  </header>
   <div id="content-main">
+      <section id="visualization" class="container">
+          <h3 class="result"></h3>
+
+          <div class="before"></div>
+          <div class="after"></div>
+      </section>
+
       <section id="input" class="container">
           <form action="/" method="POST">
             <input type="text" name="code">
@@ -14,11 +24,8 @@
           </form>
       </section>
 
-      <section id="output" class="container">
-          <h2 class="result"></h2>
-
-          <div class="before"></div>
-          <div class="after"></div>
+      <section id="about" class="container">
+          <h2><a href="http://www.sass-lang.com"></a></h2>
       </section>
   </div>
   

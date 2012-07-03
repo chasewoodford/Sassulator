@@ -1,5 +1,54 @@
+// http://meyerweb.com/eric/tools/css/reset/
+// v2.0 | 20110126
+// License: none (public domain)
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+
+// variables
+$color-background: rgba(255, 255, 255, 1);
+$color-sassPurple: rgba(206, 77, 214, 1);
+$color-sassPurple-lighter: lighten($color-sassPurple,20%);
+$color-sassPurple-lightest: lighten($color-sassPurple,60%);
+
+
+// mixins
+// gist: 1319313
+@mixin gradient($from, $to) {
+  background-color: $from;
+  background-image: -moz-linear-gradient($from, $to);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+  background-image: -webkit-linear-gradient($from, $to);
+  background-image: -o-linear-gradient($from, $to);
+}
+
 body {
-  background-color: #f0f0f0;
+  background-color: #fff;
+}
+
+header {
+  height: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: transparent;
+  background-repeat: repeat-x;
+  @include gradient($color-sassPurple-lighter, $color-sassPurple);
+  & h1 {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
 }
 
 #content-main {
@@ -11,7 +60,21 @@ body {
 
 .container {
   width: 100%;
+  margin-bottom: 20px;
   outline: 1px solid lightblue;
+}
+
+#about {
+  float: left;
+  border-top: 1px dashed #B1AD9B;
+  text-align: left;
+}
+
+h2 a {
+  float: left;
+  width: 217px;
+  height: 238px;
+  background: url(http://www.sass-lang.com/images/sass.gif) no-repeat;
 }
 
 .before,
