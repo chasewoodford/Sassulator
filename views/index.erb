@@ -1,33 +1,68 @@
 <!doctype html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
   <title>Sassulator</title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
 </head>
 <body>
-  <header>
-      <h1>Sassulator is a visualized calculator for Sass functions.</h1>
-  </header>
-  <div id="content-main">
-      <section id="visualization" class="container">
-          <h3 class="result"></h3>
+<div id='page'>
+    <div id='header'>
+        <h1><a href="/">Sassulator is a visualized calculator for Sass functions.</a></h1>
 
-          <div class="before"></div>
-          <div class="after"></div>
-      </section>
+        <aside id="start">
+            <code>gem install bundler</code>
+            <br />
+            <code>git clone git://github.com/johnathancroom/Sassulator.git</code>
+            <br />
+            <code>bundle install</code>
+            <br />
+            <code>ruby web.rb</code>
+            <br />
+            Open <a href="http://localhost:4567" target="_blank">http://localhost:4567</a>
+        </aside>
 
-      <section id="input" class="container">
-          <form action="/" method="POST">
-            <input type="text" name="code">
-            <input type="submit" value="Submit">
-          </form>
-      </section>
+        <nav id="nav">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#useCase">When Would I Ever Use This?</a></li>
+                <li><a href="#resources">Other Resources</a></li>
+                <li><a href="https://github.com/johnathancroom/Sassulator">Github</a></li>
+            </ul>
+        </nav>
 
-      <section id="about" class="container">
-          <h2><a href="http://www.sass-lang.com"></a></h2>
-      </section>
-  </div>
+        <section id="latest">
+            <h2>Latest Release:</h2>
+            [Version Name] (<span class="version">{Version Number]</span>)
+            <p><a href="#">What's New?</a></p>
+        </section>
+    </div>
+    <div id="content-main">
+        <section id="visualization" class="container">
+            <div class="before"></div>
+            <div class="after"></div>
+            <section id="input" class="container">
+                <form action="/" method="POST">
+                    <input type="text" name="code">
+                    <input type="submit" value="Submit">
+                </form>
+            </section>
+            <h3 class="hex-before"></h3>
+            <h3 class="hex-after"></h3>
+        </section>
+
+        <section id="about" class="container">
+            <p class="summary">
+                Sass makes CSS fun again. Sass makes CSS fun again. Sass makes CSS fun again. Sass makes CSS fun again. Sass makes CSS fun again. Sass makes CSS fun again. Sass makes CSS fun again. Sass makes CSS fun again. Sass makes CSS fun again. Sass makes CSS fun again.
+            </p>
+        </section>
+    </div>
+    <div id="main">
+        <hr />
+        <div id="footer">
+            <p>Sass &#169; 2006-2012 <a href='http://hamptoncatlin.com'>Hampton Catlin</a>, <a href='http://nex-3.com'>Nathan Weizenbaum</a>, <a href='http://chriseppstein.github.com'>Chris Eppstein</a>, and numerous contributors. It is available for use and modification under the <a href='/docs/yardoc/file.MIT-LICENSE.html'>MIT license</a>.</p>
+        </div>
+    </div>
   
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script type="text/javascript">
@@ -41,7 +76,8 @@
         dataType: "json",
         success: function(data, text, xhr) {
           console.log(data)
-          $(".result").html(data.output)
+          $(".hex-before").html(data.original_color)
+          $(".hex-after").html(data.output)
           $(".before").css("background-color", data.original_color)
           $(".after").css("background-color", data.output)
         }
