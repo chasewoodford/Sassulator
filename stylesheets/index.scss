@@ -5,42 +5,13 @@ $color-sassPurple-lighter: lighten($color-sassPurple,20%);
 $color-sassPurple-lightest: lighten($color-sassPurple,60%);
 
 /* original design and CSS by Lukas Dryja (http://www.lukasdryja.com), stolen from sass-lang.com */
-#header {
-  height: 250px;
-  width: 795px;
-  margin: 0 auto 60px;
-  position: relative;
-}
-
-#header h1 {
-  float: left;
-  margin: 40px 0 0 -50px;
-  text-indent: -9999px;
-}
-
-#header h1 a {
-  display: block;
-  width: 217px;
-  height: 238px;
-  background: url(http://www.sass-lang.com/images/sass.gif) no-repeat;
-}
-
 #header #start {
-  left: 300px;
-  position: absolute;
+  width: 100%;
+  max-width: 500px;
   background-color: #f8f8ff;
   padding: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -o-border-bottom-left-radius: 5px;
-  -ms-border-bottom-left-radius: 5px;
-  -khtml-border-bottom-left-radius: 5px;
+  margin: 0 auto;
   border-bottom-left-radius: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -o-border-bottom-right-radius: 5px;
-  -ms-border-bottom-right-radius: 5px;
-  -khtml-border-bottom-right-radius: 5px;
   border-bottom-right-radius: 5px;
   border-width: 1px;
   border-style: solid;
@@ -56,10 +27,7 @@ $color-sassPurple-lightest: lighten($color-sassPurple,60%);
 }
 
 #header #nav {
-  position: relative;
-  top: 160px;
-  margin-left: 200px;
-  padding: 11px 0;
+  padding: 20px;
   border-bottom: 1px dashed #b1ad9b;
 }
 
@@ -284,30 +252,6 @@ ul {
   margin-bottom: 1em;
 }
 
-// mixins
-// gist: 1319313
-//@mixin gradient($from, $to) {
-//  background-color: $from;
-//  background-image: -moz-linear-gradient($from, $to);
-//  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
-//  background-image: -webkit-linear-gradient($from, $to);
-//  background-image: -o-linear-gradient($from, $to);
-//}
-//
-//header {
-//  height: 10px;
-//  width: 100%;
-//  margin-bottom: 20px;
-//  background-color: transparent;
-//  background-repeat: repeat-x;
-//  @include gradient($color-sassPurple-lighter, $color-sassPurple);
-//  & h1 {
-//    width: 0;
-//    height: 0;
-//    overflow: hidden;
-//  }
-//}
-
 #content-main {
   width: 100%;
   margin: 0 auto;
@@ -321,7 +265,7 @@ ul {
 }
 
 #about {
-  @extend container;
+  @extend .container;
   float: left;
 }
 
