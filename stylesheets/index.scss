@@ -39,6 +39,7 @@ $color-sassPurple-lightest: lighten($color-sassPurple,60%);
 }
 
 #header #nav ul li {
+  background: #f8f8ff;
   padding: 6px 15px;
   margin: 0 7.5px;
   display: -moz-inline-box;
@@ -175,7 +176,9 @@ $color-sassPurple-lightest: lighten($color-sassPurple,60%);
 
 html, body {
   padding: 0;
-  background: white;
+  background: #ce4dd6;
+  background: radial-gradient(circle, #ce4dd6 20%, #510059);
+  background-size: cover;
   color: #090909;
   height: 100%;
   font: 13px/21px Georgia, Garamond, Times, "Times New Roman", serif;
@@ -280,6 +283,7 @@ ul {
 .before,
 .after {
   display: inline-block;
+  background: #f8f8ff;
   border: 2px solid $color-sassPurple-lighter;
   height: 300px;
   width: 45%;
